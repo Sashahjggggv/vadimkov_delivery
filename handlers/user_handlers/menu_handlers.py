@@ -8,7 +8,7 @@ from aiogram import F
 @dp.message(Command('start'))
 async def start(message: types.Message):
     await db.check_user(message.chat.id)
-    await message.answer('Привет у магазині!', reply_markup=menu(message.chat.id))
+    await message.answer('Вітаємо у магазині!', reply_markup=menu(message.chat.id))
 
 
 @dp.message(F.text == '🛒 Каталог')

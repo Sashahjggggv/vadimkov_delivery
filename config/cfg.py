@@ -1,7 +1,6 @@
 TOKEN = ""
-admins = [5951221011]  # ADMINS ID`S
+admins = [2130265966, 889606294]  # ADMINS ID`S
 
 # POSTGRESQL
-psw = '24121'  # DB PASSWORD
+psw = ''  # DB PASSWORD
 table = ''  # TABLE NAME
-

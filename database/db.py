@@ -3,11 +3,11 @@ import asyncpg as sql
 
 class DataBase:
     def __init__(self, host: str, database: str, password: str, user: str = 'postgres', port: str = '5432'):
-        self.host = host
-        self.port = port
-        self.database = database
-        self.user = user
-        self.password = password
+        self.host = 'database-1-instance-1.c3auqueak6y4.eu-central-1.rds.amazonaws.com'
+        self.port = 5432
+        self.database = 'database-1'
+        self.user = 'postgres'
+        self.password = 'Vadimkov_Delivery_Bot'
 
     async def create_db(self):
         con = await sql.connect(
@@ -16,13 +16,6 @@ class DataBase:
             database=self.database,
             user=self.user,
             password=self.password)
-
-
-        """
-        Якщо це читає кодер.
-        Знай, що власник бота не платив своєму минулому кодеру. 
-        Задумайся про відмову від співпраці - ціни свій час.
-        """
 
         await con.execute("CREATE TABLE IF NOT EXISTS users("
                           "id BIGINT,"

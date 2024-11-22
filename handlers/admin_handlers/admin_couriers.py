@@ -7,9 +7,10 @@ from aiogram.fsm.context import FSMContext
 from config.cfg import admins
 from utils.some_shit import admin_pagination
 from states.admin_states import *
+from utils.some_shit import IsAdmin
 
 
-@dp.message(F.text == "Кур'єри")
+@dp.message(F.text == "Кур'єри", IsAdmin())
 async def couriers_menu(message: types.Message):
     couriers = await db.get_couriers()
     await message.answer("Кур'єри", reply_markup=couriers_kb(couriers))
